@@ -1,0 +1,304 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:700);
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css');
+
+
+* {
+    box-sizing: border-box;
+}
+i{
+  position:absolute;
+}
+.triangle{
+  left:110px;
+	bottom:-33;
+  z-index:-1;
+  color:#e5e4e5;
+  font-size:45px;
+}
+.clover {
+  left: 60px;
+  bottom:-15;
+  transform: rotate(60deg);
+  animation: beat 0.7s infinite alternate; /* Aplica la animación 'beat' */
+  text-shadow: 1px 1px 2px #b0a8f4, 0 0 8px #b0a8f4, 0 0 5px #b0a8f4;
+
+}
+
+/* Definición de la animación 'beat' */
+@keyframes beat {
+  0%, 100% {
+    transform: rotate(60deg) scale(1.3);
+  }
+  50% {
+    transform: rotate(60deg) scale(1.5);
+  }
+}
+.starts2{
+      top: 25;
+  color:white;
+  right:-40;
+    animation: diamond 1.7s infinite alternate;
+    text-shadow: 1px 1px 2px white, 0 0 8px white, 0 0 5px white;
+
+}
+.starts3{
+  color:white;
+   bottom: -30;
+  right:75;
+  font-size:20px;
+  animation: diamond 1.4s infinite alternate;
+  text-shadow: 1px 1px 2px white, 0 0 8px white, 0 0 5px white;
+
+}
+@keyframes diamond {
+  0%, 100% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1);
+  }
+}
+.clover2{
+     bottom: -30;
+  z-index:1;
+  right:0;
+  transform: rotate(60deg);
+  animation: beat2 1.5s infinite alternate; /* Aplica la animación 'beat' */
+    text-shadow: 1px 1px 2px #b0a8f4, 0 0 5px #b0a8f4, 0 0 5px #b0a8f4;
+
+}
+
+/* Definición de la animación 'beat' */
+@keyframes beat2 {
+  0%, 100% {
+    transform: scale(1.3);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+}
+.luna2{
+   bottom: -8;
+  right:-10;
+    transform: scaleX(-1);
+  text-shadow: 1px 1px 2px #f3fdff, 0 0 15px #f3fdff, 0 0 5px black;
+
+  color:#f3fdff;
+  font-size:80px;
+}
+.starts{
+    left: 63px;
+  bottom:-45;
+  z-index:-1;
+  animation: beatstar 1.5s infinite alternate; /* Aplica la animación 'beat' */
+      text-shadow: 1px 1px 2px white, 0 0 8px white, 0 0 5px white;
+	color:white;
+}
+
+/* Definición de la animación 'beat' */
+@keyframes beatstar {
+  0%, 100% {
+    transform:  scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform:  scale(1);
+    opacity: 1; /* Puedes ajustar el valor según tu preferencia */
+  }
+}
+.luna{
+  color:#a5a1c7;
+  text-shadow: 1px 1px 2px #a5a1c7, 0 0 25px #a5a1c7, 0 0 5px #a5a1c7;
+  top:-7px;
+ font-size:35px;
+  animation: entradaluna 1s ease-in-out; /* Ajusta la duración y la función de temporización según tus necesidades */
+}
+@keyframes entradaluna {
+  0% {
+    transform: rotate(270deg) scale(0.2);
+    opacity: 0;
+  }
+  100% {
+    transform: rotate(0deg) scale(1);
+    opacity: 1;
+  }
+}
+
+.vertical{
+   top:20;
+  color:#a5a1c7;
+ left:-25px;
+ font-size:90px;
+ 
+ animation: entradavertical 0.5s ease-in-out; /* Ajusta la duración y la función de temporización según tus necesidades */
+
+}
+@keyframes entradavertical {
+  0% {
+    transform: translateY(-50px); /* Desplaza cada punto hacia arriba */
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0); /* No hay desplazamiento hacia abajo, posición original */
+    opacity: 1;
+  }
+}
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    text-shadow: 0 0 1px #000, 0 0 2px #000;
+    background: {background_color};
+    font-family: 'Roboto';
+    font-weight: 700;
+    font-size: {font_size};
+    line-height: 1.5em;
+    color: {text_color};
+}
+
+/* Keyframes for datameta animation */
+@keyframes fadeInLeftMeta {
+  0% {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Keyframes para la animación de entrada desde abajo con rebote */
+@keyframes bounceInFromBottom {
+  0%, 20%, 50%, 80%, 100% {
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    transform: translateY(0);
+  }
+  40% {
+    transition-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    transform: translateY(-30px);
+  }
+  60% {
+    transition-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    transform: translateY(-15px);
+  }
+  100% {
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    transform: translateY(0);
+  }
+}
+
+/* Aplica la animación de entrada desde abajo y rebote a datamessage */
+.datamessage {
+  animation: bounceInFromBottom 0.3s ease forwards, fadeOut 0.5s ease {message_hide_delay} forwards;
+  -webkit-animation: bounceInFromBottom 0.3s ease forwards, fadeOut 0.5s ease {message_hide_delay} forwards;
+}
+
+/* Keyframes para la animación de entrada de datameta desde la izquierda */
+@keyframes fadeInLeftMeta {
+  0% {
+    transform: translateX(-110px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Aplica la animación de entrada desde la izquierda a datameta */
+#log>div.datameta {
+  animation: fadeInLeftMeta 0.3s ease forwards, fadeOut 0.5s ease {message_hide_delay} forwards;
+  -webkit-animation: fadeInLeftMeta 0.3s ease forwards, fadeOut 0.5s ease {message_hide_delay} forwards;
+}
+
+
+.colon {
+    display: none;
+}
+
+#log {
+    position: absolute;
+    bottom: 10;
+    left: 0;
+    padding:10px;
+    width: 100%;
+
+}
+
+#log>div {
+    margin: 1em;
+   margin-bottom: 4em; 
+
+}
+#log>div.deleted {
+    visibility: hidden;
+}
+
+#log .emote {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    padding: 0.4em 0.2em;
+    position: relative;
+}
+
+#log .emote img {
+    display: inline-block;
+    height: 1em;
+    opacity: 0;
+}
+
+#log .message,#log .meta {
+    vertical-align: top;
+
+    display: table-cell;
+    padding-bottom: 0.1em;
+}
+
+
+#log .meta {
+  top: -30px;
+  font-family: 'arch', sans-serif;
+  font-weight: bold;
+  position: relative;
+  left: 70px;
+  display: inline;
+  background: #4343ac;
+  border-radius: 15px;
+  padding: 0.5em;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+
+#log .message {
+    color: #5c5b5f;
+    position: relative;
+    left: 50px;
+    background: #e5e4e5;
+    padding: 1em 2em 0.8em 2em; /* Ajusta los valores según tus necesidades */
+    margin: 0.5em 0; /* Ajusta el margen superior e inferior según tus necesidades */
+    border-radius: 20px;
+    word-wrap: break-word;
+ 		min-width: 700px;
+    max-width: 850px;
+}
+
+
+.badge {
+    display: inline-block;
+    margin-right: 0.2em;
+    position: relative;
+    height: 1em;
+    vertical-align: middle;
+    top: -0.1em;
+}
+
+.name {
+
+    margin-left: 0.2em;
+}
